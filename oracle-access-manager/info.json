@@ -2,14 +2,14 @@
   "name": "oracle-access-manager",
   "label": "Oracle Access Manager",
   "version": "1.0.0",
-  "description": "",
+  "description": "Oracle Access Manager (OAM) is a robust identity and access management solution that provides secure authentication, single sign-on, and authorization control for web applications and resources within organizations. It ensures only authorized users can access specific data, enhancing security and user experience.",
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
   "category": "Identity and Access Management",
   "icon_small_name": "Oracle-Access-Manager-32X32.png",
   "icon_large_name": "Oracle-Access-Manager-80X80.png",
-  "help_online": "Oracle Access Manager (OAM) is a robust identity and access management solution that provides secure authentication, single sign-on, and authorization control for web applications and resources within organizations. It ensures only authorized users can access specific data, enhancing security and user experience.",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
