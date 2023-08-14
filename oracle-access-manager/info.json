@@ -1,0 +1,335 @@
+{
+  "name": "oracle-access-manager",
+  "label": "Oracle Access Manager",
+  "version": "1.0.0",
+  "description": "Oracle Access Manager (OAM) is a robust identity and access management solution that provides secure authentication, single sign-on, and authorization control for web applications and resources within organizations. It ensures only authorized users can access specific data, enhancing security and user experience.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Identity and Access Management",
+  "icon_small_name": "Oracle-Access-Manager-32X32.png",
+  "icon_large_name": "Oracle-Access-Manager-80X80.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "host",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "URL of the Oracle Access Manager (OAM) server to which you will connect and perform automated operations.",
+        "description": "Specify the URL of the Oracle Access Manager (OAM) server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Username",
+        "name": "username",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "Username of the Oracle Access Manager (OAM) server to which you will connect and perform automated operations.",
+        "description": "Specify the username used to access the Oracle Access Manager (OAM) server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Password",
+        "name": "password",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "Password used to access the Oracle Access Manager (OAM) server to which you will connect and perform automated operations.",
+        "description": "Specify the password used to access the Oracle Access Manager (OAM) server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "retrieve_sessions",
+      "title": "Get Sessions List",
+      "annotation": "retrieve_sessions",
+      "description": "Retrieves information about the sessions from Oracle Access Manager (OAM) based on the input parameters specified.",
+      "category": "investigation",
+      "visible": true,
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Client IP",
+          "name": "clientIp",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the client IP Address to retrieve sessions that originate from that specific client IP.",
+          "description": "Specify the client IP Address to retrieve sessions that originate from that specific client IP."
+        },
+        {
+          "title": "Session ID",
+          "name": "sessionId",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the session ID of the session whose details you want to retrieve from Oracle Access Manager.",
+          "description": "Specify the session ID of the session whose details you want to retrieve from Oracle Access Manager."
+        },
+        {
+          "title": "User ID",
+          "name": "userId",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the User ID to retrieve sessions belonging to a specific user.",
+          "description": "Specify the User ID to retrieve sessions belonging to a specific user."
+        },
+        {
+          "title": "ID Store Name",
+          "name": "idStoreName",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify Identity Store name to retrieve sessions belonging to users in a specific Identity Store.",
+          "description": "Specify Identity Store name to retrieve sessions belonging to users in a specific Identity Store."
+        },
+        {
+          "title": "Is Impersonating",
+          "name": "isImpersonating",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify whether you want to retrieve sessions where impersonation is being utilized or not.",
+          "description": "Specify whether you want to retrieve sessions where impersonation is being utilized or not.",
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "title": "Last Access Time",
+          "name": "lastAccessTime",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the time to retrieve sessions that were last accessed before or at the specified time.",
+          "description": "Specify the time to retrieve sessions that were last accessed before or at the specified time."
+        },
+        {
+          "title": "Update Time",
+          "name": "updateTime",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the time to retrieve sessions that were last updated before or at the specified time.",
+          "description": "Specify the time to retrieve sessions that were last updated before or at the specified time."
+        },
+        {
+          "title": "Expiry Time",
+          "name": "expiryTime",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Specify the time to retrieve sessions that are scheduled to expire before or at the given time.",
+          "description": "Specify the time to retrieve sessions that are scheduled to expire before or at the given time."
+        },
+        {
+          "title": "User Attributes",
+          "name": "userAttributes",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "tooltip": "Specify user attributes in key-value pairs to retrieve sessions based on those user attributes.",
+          "description": "Specify user attributes in key-value pairs to retrieve sessions based on those user attributes."
+        },
+        {
+          "title": "Start Index",
+          "name": "fromIndex",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "tooltip": "Specify the number of records to skip in this request.",
+          "description": "Specify the number of records to skip in this request."
+        },
+        {
+          "title": "Size",
+          "name": "pageSize",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "tooltip": "Specify the maximum number of records to retrieve in this request.",
+          "description": "Specify the maximum number of records to retrieve in this request."
+        }
+      ]
+    },
+    {
+      "operation": "delete_sessions",
+      "title": "Delete Session",
+      "annotation": "delete_sessions",
+      "description": "Deletes sessions from Oracle Access Manager (OAM) based on the input parameters specified. This operation allows you to delete sessions either by Session ID or User ID.",
+      "category": "investigation",
+      "visible": true,
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Based On",
+          "name": "based_on",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "value": "Session ID",
+          "tooltip": "Select the query parameter based on which session is to be deleted.",
+          "description": "Select the query parameter based on which session is to be deleted. You can choose from 'Session ID' or 'User ID'.",
+          "options": [
+            "Session ID",
+            "User ID"
+          ],
+          "onchange": {
+            "Session ID": [
+              {
+                "title": "Session ID",
+                "name": "sessionId",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "tooltip": "Specify the session ID of the session to be deleted.",
+                "description": "Specify the session ID of the session to be deleted."
+              }
+            ],
+            "User ID": [
+              {
+                "title": "User ID",
+                "name": "userId",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "tooltip": "Specify the User ID whose sessions are to be deleted.",
+                "description": "Specify the User ID whose sessions are to be deleted."
+              },
+              {
+                "title": "Identity Store",
+                "name": "idStore",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "tooltip": "Specify the Identity Store name to which the user belongs. The Identity Store parameter allows you to narrow down the scope of the session deletion to a specific Identity Store, providing more control and precision when managing user sessions.",
+                "description": "Specify the Identity Store name to which the user belongs. This parameter is used in conjunction with the User ID parameter. The idStore parameter allows you to narrow down the scope of the session deletion to a specific Identity Store, providing more control and precision when managing user sessions. Note: If the User ID parameter is not provided, then this parameter is ignored."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_user_status_by_user_id",
+      "title": "Get User Status by User ID",
+      "annotation": "get_user_status_by_user_id",
+      "description": "Retrieves user status details from Oracle Access Manager (OAM) based on the input User ID.",
+      "category": "investigation",
+      "visible": true,
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "User ID",
+          "name": "userId",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the User ID whose status details you want to retrieve from Oracle Access Manager (OAM).",
+          "description": "Specify the User ID whose status details you want to retrieve from Oracle Access Manager (OAM)."
+        }
+      ]
+    },
+    {
+      "operation": "change_user_status_by_user_id",
+      "title": "Change User Status By User ID",
+      "annotation": "change_user_status_by_user_id",
+      "description": "Changes the status of a user in Oracle Access Manager (OAM) based on the input parameters specified. This operation allows you to enable or disable a user, force password change, and unlock the user's account.",
+      "category": "investigation",
+      "visible": true,
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "User ID",
+          "name": "userId",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the User ID whose status you want to change in Oracle Access Manager (OAM).",
+          "description": "Specify the User ID whose status you want to change in Oracle Access Manager (OAM)."
+        },
+        {
+          "title": "Enable",
+          "name": "enabled",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify whether to enable or disable the user. Choose 'True' to enable and 'False' to disable.",
+          "description": "Specify whether to enable or disable the user. Choose 'True' to enable and 'False' to disable.",
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "title": "Force Password Change",
+          "name": "forcepwdchange",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify whether to force the user to change their password at the next login. Choose 'True' to force password change and 'False' otherwise.",
+          "description": "Specify whether to force the user to change their password at the next login. Choose 'True' to force password change and 'False' otherwise.",
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "title": "Unlocked",
+          "name": "unlocked",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify whether to unlock the user's account. Choose 'True' to unlock and 'False' otherwise.",
+          "description": "Specify whether to unlock the user's account. Choose 'True' to unlock and 'False' otherwise.",
+          "options": [
+            "True",
+            "False"
+          ]
+        }
+      ]
+    }
+  ]
+}

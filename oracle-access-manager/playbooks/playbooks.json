@@ -1,0 +1,406 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@context": "/api/3/contexts/WorkflowCollection",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Oracle Access Manager - 1.0.0",
+      "description": "Sample playbooks for \"Oracle Access Manager\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": null,
+      "id": 89,
+      "createDate": 1690867975.606583,
+      "modifyDate": 1690867975.606583,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Oracle",
+        "oracle-access-manager"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Session",
+          "aliasName": null,
+          "tag": "#Oracle Access Manager",
+          "description": "Deletes sessions from Oracle Access Manager (OAM) based on the input parameters specified. This operation allows you to delete sessions either by Session ID or User ID.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1690868023,
+          "collection": "/api/3/workflow_collections/bf0a60ae-5cc7-4d07-9cae-47d9c3105f06",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/22cf08b9-d040-49e6-be14-426a30ba911b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Session",
+              "description": null,
+              "arguments": {
+                "name": "Oracle Access Manager",
+                "config": "''",
+                "params": {
+                  "based_on": "Session ID"
+                },
+                "version": "1.0.0",
+                "connector": "oracle-access-manager",
+                "operation": "delete_sessions",
+                "operationTitle": "Delete Session",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "dbbd8886-dc2b-477c-acd9-9f451b55957a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "9ca3bf8d-73b0-433b-83bb-d20b32e8fedf",
+                "title": "Oracle Access Manager: Delete Session",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "22cf08b9-d040-49e6-be14-426a30ba911b"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Delete Session",
+              "targetStep": "/api/3/workflow_steps/dbbd8886-dc2b-477c-acd9-9f451b55957a",
+              "sourceStep": "/api/3/workflow_steps/22cf08b9-d040-49e6-be14-426a30ba911b",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "4d599ef1-b117-48c4-8284-90e2f523d09d"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "0efb0a8d-ce2f-4f45-ad3d-22f3d7fbe67b",
+          "id": 1057,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Oracle",
+            "oracle-access-manager"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Change User Status By User ID",
+          "aliasName": null,
+          "tag": "#Oracle Access Manager",
+          "description": "Changes the status of a user in Oracle Access Manager (OAM) based on the input parameters specified. This operation allows you to enable or disable a user, force password change, and unlock the user's account.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1690868011,
+          "collection": "/api/3/workflow_collections/bf0a60ae-5cc7-4d07-9cae-47d9c3105f06",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/cc11f49b-f927-4203-a975-066312290568",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Change User Status By User ID",
+              "description": null,
+              "arguments": {
+                "name": "Oracle Access Manager",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "oracle-access-manager",
+                "operation": "change_user_status_by_user_id",
+                "operationTitle": "Change User Status By User ID",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "09510e70-2a8c-4d02-a421-1219dd366ab0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "30f1abff-db0e-485f-973b-3343993ad90e",
+                "title": "Oracle Access Manager: Change User Status By User ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "cc11f49b-f927-4203-a975-066312290568"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Change User Status By User ID",
+              "targetStep": "/api/3/workflow_steps/09510e70-2a8c-4d02-a421-1219dd366ab0",
+              "sourceStep": "/api/3/workflow_steps/cc11f49b-f927-4203-a975-066312290568",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "9e5a1271-a3c9-4fed-9858-61554cf4929f"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "65b41674-232b-4363-9100-3c17edc17d44",
+          "id": 1059,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Oracle",
+            "oracle-access-manager"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get User Status by User ID",
+          "aliasName": null,
+          "tag": "#Oracle Access Manager",
+          "description": "Retrieves user status details from Oracle Access Manager (OAM) based on the input User ID.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1690868017,
+          "collection": "/api/3/workflow_collections/bf0a60ae-5cc7-4d07-9cae-47d9c3105f06",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ca3e2e40-9a3c-44c7-8a66-8ae277981176",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get User Status by User ID",
+              "description": null,
+              "arguments": {
+                "name": "Oracle Access Manager",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "oracle-access-manager",
+                "operation": "get_user_status_by_user_id",
+                "operationTitle": "Get User Status by User ID",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "03a510d5-1556-4de6-b4bb-d7d12e09d781"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "fa359e5a-bfdd-43f7-80ab-88047b96dfbe",
+                "title": "Oracle Access Manager: Get User Status by User ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ca3e2e40-9a3c-44c7-8a66-8ae277981176"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get User Status by User ID",
+              "targetStep": "/api/3/workflow_steps/03a510d5-1556-4de6-b4bb-d7d12e09d781",
+              "sourceStep": "/api/3/workflow_steps/ca3e2e40-9a3c-44c7-8a66-8ae277981176",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "f79a935e-1f52-4937-9989-26eb18a513d7"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "820da3b6-67b7-4c24-9cb6-4cea115806e8",
+          "id": 1058,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Oracle",
+            "oracle-access-manager"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Sessions List",
+          "aliasName": null,
+          "tag": "#Oracle Access Manager",
+          "description": "Retrieves information about the sessions from Oracle Access Manager (OAM) based on the input parameters specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1690867998,
+          "collection": "/api/3/workflow_collections/bf0a60ae-5cc7-4d07-9cae-47d9c3105f06",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c5a6a846-b404-445a-82b7-b8d07bdd5d4b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Sessions List",
+              "description": null,
+              "arguments": {
+                "name": "Oracle Access Manager",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "oracle-access-manager",
+                "operation": "retrieve_sessions",
+                "operationTitle": "Get Sessions List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ed77166a-4175-468f-8b5f-6ba1f0e6f09c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "63d66e30-440f-4eac-abb1-49ce5758e3e3",
+                "title": "Oracle Access Manager: Get Sessions List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "c5a6a846-b404-445a-82b7-b8d07bdd5d4b"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Sessions List",
+              "targetStep": "/api/3/workflow_steps/ed77166a-4175-468f-8b5f-6ba1f0e6f09c",
+              "sourceStep": "/api/3/workflow_steps/c5a6a846-b404-445a-82b7-b8d07bdd5d4b",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "e986084f-525a-4ad5-afc5-d2d1aded46c2"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "dfd391f8-880f-4955-b501-69a39cc0ab75",
+          "id": 1056,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Oracle",
+            "oracle-access-manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Oracle",
+    "oracle-access-manager"
+  ]
+}
