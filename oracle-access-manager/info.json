@@ -9,7 +9,7 @@
   "category": "Identity and Access Management",
   "icon_small_name": "Oracle-Access-Manager-32X32.png",
   "icon_large_name": "Oracle-Access-Manager-80X80.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/oracle-access-manager/667/oracle-access-manager-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -19,8 +19,8 @@
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "URL of the Oracle Access Manager (OAM) server to which you will connect and perform automated operations.",
-        "description": "Specify the URL of the Oracle Access Manager (OAM) server to which you will connect and perform automated operations."
+        "tooltip": "Specify the URL of the Oracle Access Manager (OAM) server to connect and perform automated operations.",
+        "description": "Specify the URL of the Oracle Access Manager (OAM) server to connect and perform automated operations."
       },
       {
         "title": "Username",
@@ -29,8 +29,8 @@
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "Username of the Oracle Access Manager (OAM) server to which you will connect and perform automated operations.",
-        "description": "Specify the username used to access the Oracle Access Manager (OAM) server to which you will connect and perform automated operations."
+        "tooltip": "Specify the username required to access the Oracle Access Manager (OAM) server to connect and perform automated operations.",
+        "description": "Specify the username required to access the Oracle Access Manager (OAM) server to connect and perform automated operations."
       },
       {
         "title": "Password",
@@ -39,8 +39,8 @@
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "Password used to access the Oracle Access Manager (OAM) server to which you will connect and perform automated operations.",
-        "description": "Specify the password used to access the Oracle Access Manager (OAM) server to which you will connect and perform automated operations."
+        "tooltip": "Specify the password required to access the Oracle Access Manager (OAM) server to connect and perform automated operations.",
+        "description": "Specify the password required to access the Oracle Access Manager (OAM) server to connect and perform automated operations."
       },
       {
         "title": "Verify SSL",
@@ -50,8 +50,8 @@
         "type": "checkbox",
         "name": "verify_ssl",
         "value": true,
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True.",
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True."
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
       }
     ]
   },
@@ -60,7 +60,7 @@
       "operation": "retrieve_sessions",
       "title": "Get Sessions List",
       "annotation": "retrieve_sessions",
-      "description": "Retrieves information about the sessions from Oracle Access Manager (OAM) based on the input parameters specified.",
+      "description": "Retrieves information about the sessions from Oracle Access Manager (OAM) based on the Client IP, Session ID, and other input parameters specified.",
       "category": "investigation",
       "visible": true,
       "enabled": true,
@@ -73,8 +73,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the client IP Address to retrieve sessions that originate from that specific client IP.",
-          "description": "Specify the client IP Address to retrieve sessions that originate from that specific client IP."
+          "tooltip": "Specify the client IP Address to filter retrieved sessions that originated from that client IP.",
+          "description": "Specify the client IP Address to filter retrieved sessions that originated from that client IP."
         },
         {
           "title": "Session ID",
@@ -83,8 +83,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the session ID of the session whose details you want to retrieve from Oracle Access Manager.",
-          "description": "Specify the session ID of the session whose details you want to retrieve from Oracle Access Manager."
+          "tooltip": "Specify the session ID to filter retrieved sessions from Oracle Access Manager.",
+          "description": "Specify the session ID to filter retrieved sessions from Oracle Access Manager."
         },
         {
           "title": "User ID",
@@ -93,8 +93,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the User ID to retrieve sessions belonging to a specific user.",
-          "description": "Specify the User ID to retrieve sessions belonging to a specific user."
+          "tooltip": "Specify the User ID to filter retrieved sessions belonging to a specific user.",
+          "description": "Specify the User ID to filter retrieved sessions belonging to a specific user."
         },
         {
           "title": "ID Store Name",
@@ -103,8 +103,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify Identity Store name to retrieve sessions belonging to users in a specific Identity Store.",
-          "description": "Specify Identity Store name to retrieve sessions belonging to users in a specific Identity Store."
+          "tooltip": "Specify Identity Store name to filter retrieved sessions belonging to users in a specific Identity Store.",
+          "description": "Specify Identity Store name to filter retrieved sessions belonging to users in a specific Identity Store."
         },
         {
           "title": "Is Impersonating",
@@ -113,8 +113,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Specify whether you want to retrieve sessions where impersonation is being utilized or not.",
-          "description": "Specify whether you want to retrieve sessions where impersonation is being utilized or not.",
+          "tooltip": "Select whether you want to filter retrieved sessions where impersonation is being utilized.",
+          "description": "Select whether you want to filter retrieved sessions where impersonation is being utilized.",
           "options": [
             "True",
             "False"
@@ -127,8 +127,8 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "tooltip": "Specify the time to retrieve sessions that were last accessed before or at the specified time.",
-          "description": "Specify the time to retrieve sessions that were last accessed before or at the specified time."
+          "tooltip": "Specify the time to filter retrieved sessions that were last accessed before or at the specified time.",
+          "description": "Specify the time to filter retrieved sessions that were last accessed before or at the specified time."
         },
         {
           "title": "Update Time",
@@ -137,8 +137,8 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "tooltip": "Specify the time to retrieve sessions that were last updated before or at the specified time.",
-          "description": "Specify the time to retrieve sessions that were last updated before or at the specified time."
+          "tooltip": "Specify the time to filter retrieved sessions that were last updated before or at the specified time.",
+          "description": "Specify the time to filter retrieved sessions that were last updated before or at the specified time."
         },
         {
           "title": "Expiry Time",
@@ -147,8 +147,8 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "tooltip": "Specify the time to retrieve sessions that are scheduled to expire before or at the given time.",
-          "description": "Specify the time to retrieve sessions that are scheduled to expire before or at the given time."
+          "tooltip": "Specify the time to filter retrieved sessions that are scheduled to expire before or at the given time.",
+          "description": "Specify the time to filter retrieved sessions that are scheduled to expire before or at the given time."
         },
         {
           "title": "User Attributes",
@@ -157,8 +157,8 @@
           "editable": true,
           "visible": true,
           "type": "json",
-          "tooltip": "Specify user attributes in key-value pairs to retrieve sessions based on those user attributes.",
-          "description": "Specify user attributes in key-value pairs to retrieve sessions based on those user attributes."
+          "tooltip": "Specify user attributes in key-value pairs to filter retrieved sessions based on those user attributes.",
+          "description": "Specify user attributes in key-value pairs to filter retrieved sessions based on those user attributes."
         },
         {
           "title": "Start Index",
@@ -167,8 +167,8 @@
           "editable": true,
           "visible": true,
           "type": "integer",
-          "tooltip": "Specify the number of records to skip in this request.",
-          "description": "Specify the number of records to skip in this request."
+          "tooltip": "Specify the number of records to skip in this request when retrieving sessions.",
+          "description": "Specify the number of records to skip in this request when retrieving sessions."
         },
         {
           "title": "Size",
@@ -186,7 +186,7 @@
       "operation": "delete_sessions",
       "title": "Delete Session",
       "annotation": "delete_sessions",
-      "description": "Deletes sessions from Oracle Access Manager (OAM) based on the input parameters specified. This operation allows you to delete sessions either by Session ID or User ID.",
+      "description": "Deletes sessions from Oracle Access Manager (OAM) based on the session or user ID specified.",
       "category": "investigation",
       "visible": true,
       "enabled": true,
@@ -201,7 +201,7 @@
           "type": "select",
           "value": "Session ID",
           "tooltip": "Select the query parameter based on which session is to be deleted.",
-          "description": "Select the query parameter based on which session is to be deleted. You can choose from 'Session ID' or 'User ID'.",
+          "description": "Select the query parameter based on which a session is to be deleted. You can choose from following options: Session ID and User ID",
           "options": [
             "Session ID",
             "User ID"
@@ -215,8 +215,8 @@
                 "editable": true,
                 "visible": true,
                 "type": "text",
-                "tooltip": "Specify the session ID of the session to be deleted.",
-                "description": "Specify the session ID of the session to be deleted."
+                "tooltip": "Specify the session ID to delete the associated session.",
+                "description": "Specify the session ID to delete the associated session."
               }
             ],
             "User ID": [
@@ -227,8 +227,8 @@
                 "editable": true,
                 "visible": true,
                 "type": "text",
-                "tooltip": "Specify the User ID whose sessions are to be deleted.",
-                "description": "Specify the User ID whose sessions are to be deleted."
+                "tooltip": "Specify the User ID to delete all sessions associated with the specified user.",
+                "description": "Specify the User ID to delete all sessions associated with the specified user."
               },
               {
                 "title": "Identity Store",
@@ -238,7 +238,7 @@
                 "visible": true,
                 "type": "text",
                 "tooltip": "Specify the Identity Store name to which the user belongs. The Identity Store parameter allows you to narrow down the scope of the session deletion to a specific Identity Store, providing more control and precision when managing user sessions.",
-                "description": "Specify the Identity Store name to which the user belongs. This parameter is used in conjunction with the User ID parameter. The idStore parameter allows you to narrow down the scope of the session deletion to a specific Identity Store, providing more control and precision when managing user sessions. Note: If the User ID parameter is not provided, then this parameter is ignored."
+                "description": "Specify the Identity Store name to which the user belongs. This parameter is used in conjunction with the User ID parameter. The idStore parameter allows you to narrow down the scope of the session deletion to a specific Identity Store, providing more control and precision when managing user sessions. NOTE: If the User ID parameter is not provided, then the Identity Store parameter is ignored."
               }
             ]
           }
@@ -249,7 +249,7 @@
       "operation": "get_user_status_by_user_id",
       "title": "Get User Status by User ID",
       "annotation": "get_user_status_by_user_id",
-      "description": "Retrieves user status details from Oracle Access Manager (OAM) based on the input User ID.",
+      "description": "Retrieves user status details from Oracle Access Manager (OAM) based on the user ID specified.",
       "category": "investigation",
       "visible": true,
       "enabled": true,
@@ -271,7 +271,7 @@
       "operation": "change_user_status_by_user_id",
       "title": "Change User Status By User ID",
       "annotation": "change_user_status_by_user_id",
-      "description": "Changes the status of a user in Oracle Access Manager (OAM) based on the input parameters specified. This operation allows you to enable or disable a user, force password change, and unlock the user's account.",
+      "description": "Changes the status of a user in Oracle Access Manager (OAM) based on the User ID and other input parameters specified. This operation allows you to enable or disable a user, force password change, and unlock the user's account.",
       "category": "investigation",
       "visible": true,
       "enabled": true,
@@ -295,7 +295,7 @@
           "visible": true,
           "type": "select",
           "tooltip": "Specify whether to enable or disable the user. Choose 'True' to enable and 'False' to disable.",
-          "description": "Specify whether to enable or disable the user. Choose 'True' to enable and 'False' to disable.",
+          "description": "Select whether to enable or disable the user. You can choose from the following options: True: Select this option to enable the user in Oracle Access Manager (OAM). False: Select this option to disable the user in Oracle Access Manager (OAM).",
           "options": [
             "True",
             "False"
@@ -308,8 +308,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Specify whether to force the user to change their password at the next login. Choose 'True' to force password change and 'False' otherwise.",
-          "description": "Specify whether to force the user to change their password at the next login. Choose 'True' to force password change and 'False' otherwise.",
+          "tooltip": "Specify whether to force the user to change their password at the next login. Choose 'True' to force password change on next login.",
+          "description": "Select whether to force the user to change their password on the next login. You can choose from the following options: True: Select this option to force the user to change their password on next login. False: Select this option to allow the user to change their password at their convenience.",
           "options": [
             "True",
             "False"
@@ -322,8 +322,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Specify whether to unlock the user's account. Choose 'True' to unlock and 'False' otherwise.",
-          "description": "Specify whether to unlock the user's account. Choose 'True' to unlock and 'False' otherwise.",
+          "tooltip": "Select whether to unlock the user's account or let it remain as is.",
+          "description": "Select whether to unlock the user's account or let it remain as is. You can choose from the following options: True: Select this option to unlock the user's account, if locked. Selecting any other option does not affect the account status. False: Select this option to lock the user's account, if unlocked. Selecting any other option does not affect the account status.",
           "options": [
             "True",
             "False"
